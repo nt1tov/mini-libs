@@ -165,14 +165,3 @@ private:
 void test(void){
     return;
 }
-
-// int main(){
-//     MiniTester<function<void(void)>> mt;
-//     function<void ()> TestSortFunc = TestSort;
-//     //TestSortFunc();
-//    // ADD_TEST(mt, TestSortFunc);
-//     //mt.RunAll();
-//     return 0;
-// }
-
-
