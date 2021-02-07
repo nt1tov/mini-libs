@@ -15,19 +15,22 @@
     runner.RunTest(test, #test)
 
 #define ASSERT_EQUAL(a,b) {             \
+    auto lhs = a;                       \
+    auto rhs = b;                       \
     std::ostringstream os;              \
     os<< #a << " != " << #b      \
     << ", ";                            \
     os << __FILE__ << ": " << __LINE__; \
-    AssertEqual(a, b, os.str());        \
+    AssertEqual(lhs, rhs, os.str());        \
 }
 
 #define ASSERT(a) {                     \
+    auto lhs = a;                       \
     std::ostringstream os;              \
     os << #a << " != " << "true" \
     << ", ";                            \
     os << __FILE__ << ": " << __LINE__; \
-    AssertEqual(a, b, os.str());        \
+    AssertEqual(lhs, true, os.str());   \
 }
 
 #define ADD_TEST(runner, func) {        \
